@@ -4,7 +4,7 @@ import 'package:peliculas_app/web/screens/details_screen.dart';
 import 'package:peliculas_app/web/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(const AppState());
+void main() => runApp(AppState());
 
 class AppState extends StatelessWidget {
   const AppState({Key? key}) : super(key: key);
@@ -12,8 +12,12 @@ class AppState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => MoviesProvider())],
-      child: const MyApp(),
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => MoviesProvider(),
+        )
+      ],
+      child: MyApp(),
     );
   }
 }
